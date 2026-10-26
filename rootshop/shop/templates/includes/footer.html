@@ -1,0 +1,27 @@
+{% load static %}
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href="{% url 'main' %}" class="logo">Auto<span>Premium</span></a>
+            <p>Интернет-магазин проверенных автомобилей. Москва и вся Россия.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Навигация</h4>
+            <a href="{% url 'main' %}">Главная</a>
+            <a href="{% url 'catalog' %}">Каталог</a>
+            <a href="{% url 'about' %}">О нас</a>
+        </div>
+        <div class="footer-col">
+            <h4>Контакты</h4>
+            <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+            <a href="mailto:info@autopremium.ru">info@autopremium.ru</a>
+        </div>
+        <div class="footer-col">
+            <h4>Адрес</h4>
+            <p style="color:#a0a0b0;font-size:0.9rem;">г. Москва, ул. Автомобильная, 15</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 AutoPremium. Все права защищены.
+    </div>
+</footer>

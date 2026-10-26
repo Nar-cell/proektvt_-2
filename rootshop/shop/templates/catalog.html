@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Каталог автомобилей — AutoPremium{% endblock %}
+
+{% block content %}
+<div class="page-header">
+        <div class="page-header-inner">
+            <h1>Каталог автомобилей</h1>
+            <p>Более 50 проверенных автомобилей в наличии</p>
+        </div>
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active">Все</button>
+        <button class="filter-btn">Седаны</button>
+        <button class="filter-btn">Кроссоверы</button>
+        <button class="filter-btn">Премиум</button>
+        <button class="filter-btn">До 3 млн ₽</button>
+        <button class="filter-btn">До 5 млн ₽</button>
+    </div>
+
+    <section>
+        <div class="cars-grid">
+            <!-- Car 1 -->
+            <article class="car-card">
+                <div class="car-img">
+                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&q=80" alt="Mercedes-Benz E-Class">
+                    <span class="car-badge">Хит</span>
+                </div>
+                <div class="car-body">
+                    <div class="car-brand">Mercedes-Benz</div>
+                    <h3 class="car-name">E-Class 220d 2021</h3>
+                    <div class="car-specs">
+                        <span>2.0 л · 194 л.с.</span>
+                        <span>45 000 км</span>
+                        <span>Автомат</span>
+                    </div>
+                    <div class="car-price-row">
+                        <div class="car-price">4 890 000 ₽</div>
+                        <button class="car-btn">Подробнее</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Car 2 -->
+            <article class="car-card">
+                <div class="car-img">
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=600&q=80" alt="BMW 5 Series">
+                    <span class="car-badge">Новое</span>
+                </div>
+                <div class="car-body">
+                    <div class="car-brand">BMW</div>
+                    <h3 class="car-name">5 Series 530i 2022</h3>
+                    <div class="car-specs">
+                        <span>2.0 л · 252 л.с.</span>
+                        <span>32 000 км</span>
+                        <span>Автомат</span>
+                    </div>
+                    <div class="car-price-row">
+                        <div class="car-price">5 250 000 ₽</div>
+                        <button class="car-btn">Подробнее</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Car 3 -->
+            <article class="car-card">
+                <div class="car-img">
+                    <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600&q=80" alt="Audi A6">
+                </div>
+                <div class="car-body">
+                    <div class="car-brand">Audi</div>
+                    <h3 class="car-name">A6 45 TFSI 2021</h3>
+                    <div class="car-specs">
+                        <span>2.0 л · 245 л.с.</span>
+                        <span>28 500 км</span>
+                        <span>Автомат</span>
+                    </div>
+                    <div class="car-price-row">
+                        <div class="car-price">4 670 000 ₽</div>
+                        <button class="car-btn">Подробнее</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Car 4 -->
+            <article class="car-card">
+                <div class="car-img">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80" alt="BMW X5">
+                    <span class="car-badge green">Выгодно</span>
+                </div>
+                <div class="car-body">
+                    <div class="car-brand">BMW</div>
+                    <h3 class="car-name">X5 xDrive40i 2020</h3>
+                    <div class="car-specs">
+                        <span>3.0 л · 340 л.с.</span>
+                        <span>58 000 км</span>
+                        <span>Автомат</span>
+                    </div>
+                    <div class="car-price-row">
+                        <div class="car-price">5 990 000 ₽</div>
+                        <button class="car-btn">Подробнее</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Car 5 -->
+            <article class="car-card">
+                <div class="car-img">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80" alt="Porsche 911">
+                    <span class="car-badge">Премиум</span>
+                </div>
+                <div class="car-body">
+                    <div class="car-brand">Porsche</div>
+                    <h3 class="car-name">911 Carrera 2019</h3>
+                    <div class="car-specs">
+                        <span>3.0 л · 450 л.с.</span>
+                        <span>22 000 км</span>
+                        <span>PDK</span>
+                    </div>
+                    <div class="car-price-row">
+                        <div class="car-price">9 850 000 ₽</div>
+                        <button class="car-btn">Подробнее</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Car 6 -->
+            <article class="car-card">
+                <div class="car-img">
+                    <img src="https://images.unsplash.com/photo-1542362567-b07e54389859?w=600&q=80" alt="Toyota Camry">
+                </div>
+                <div class="car-body">
+                    <div class="car-brand">Toyota</div>
+                    <h3 class="car-name">Camry 2.5 2022</h3>
+                    <div class="car-specs">
+                        <span>2.5 л · 200 л.с.</span>
+                        <span>18 000 км</span>
+                        <span>Автомат</span>
+                    </div>
+                    <div class="car-price-row">
+                        <div class="car-price">3 150 000 ₽</div>
+                        <button class="car-btn">Подробнее</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Car 7 -->
+            <article class="car-card">
+                <div class="car-img">
+                    <img src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=600&q=80" alt="Lexus RX">
+                </div>
+                <div class="car-body">
+                    <div class="car-brand">Lexus</div>
+                    <h3 class="car-name">RX 350 2021</h3>
+                    <div class="car-specs">
+                        <span>3.5 л · 300 л.с.</span>
+                        <span>35 000 км</span>
+                        <span>Автомат</span>
+                    </div>
+                    <div class="car-price-row">
+                        <div class="car-price">5 480 000 ₽</div>
+                        <button class="car-btn">Подробнее</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Car 8 -->
+            <article class="car-card">
+                <div class="car-img">
+                    <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=600&q=80" alt="Volkswagen Tiguan">
+                    <span class="car-badge green">Выгодно</span>
+                </div>
+                <div class="car-body">
+                    <div class="car-brand">Volkswagen</div>
+                    <h3 class="car-name">Tiguan 2.0 TSI 2021</h3>
+                    <div class="car-specs">
+                        <span>2.0 л · 180 л.с.</span>
+                        <span>41 000 км</span>
+                        <span>Автомат</span>
+                    </div>
+                    <div class="car-price-row">
+                        <div class="car-price">2 890 000 ₽</div>
+                        <button class="car-btn">Подробнее</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Car 9 -->
+            <article class="car-card">
+                <div class="car-img">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&q=80" alt="Ferrari">
+                    <span class="car-badge">Премиум</span>
+                </div>
+                <div class="car-body">
+                    <div class="car-brand">Tesla</div>
+                    <h3 class="car-name">Model 3 Long Range</h3>
+                    <div class="car-specs">
+                        <span>Электро · 351 л.с.</span>
+                        <span>15 000 км</span>
+                        <span>Автомат</span>
+                    </div>
+                    <div class="car-price-row">
+                        <div class="car-price">4 200 000 ₽</div>
+                        <button class="car-btn">Подробнее</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+{% endblock %}

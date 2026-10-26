@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Заказы — AutoPremium{% endblock %}
+{% block content %}
+<div class="crud-page">
+    <h1>Заказы</h1>
+    <p class="subtitle">Таблица Order · FK → Customer и Car (один ко многим)</p>
+    {% include "includes/messages.html" %}
+    <div class="crud-grid">
+        <div class="form-card">
+            <h2>Создать заказ</h2>
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% include "includes/form_errors.html" %}
+                {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}<ul class="form-errors">{% for e in field.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn" style="width:100%;margin-top:0.5rem">Сохранить</button>
+            </form>
+        </div>
+        <div class="list-card">
+            <h2>Список заказов ({{ items|length }})</h2>
+            {% if items %}
+            <table class="data-table">
+                <thead><tr><th>ID</th><th>Клиент</th><th>Автомобиль</th><th>Статус</th><th>Дата</th></tr></thead>
+                <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>#{{ item.id }}</td>
+                    <td>{{ item.customer.full_name }}</td>
+                    <td>{{ item.car }}</td>
+                    <td>{{ item.get_status_display }}</td>
+                    <td>{{ item.created_at|date:"d.m.Y H:i" }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p class="empty-list">Нужны клиент и автомобиль, чтобы создать заказ.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

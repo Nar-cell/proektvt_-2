@@ -1,0 +1,18 @@
+{% load static %}
+<header>
+    <nav class="nav">
+        <a href="{% url 'main' %}" class="logo">Auto<span>Premium</span></a>
+        <ul class="nav-links">
+            <li><a href="{% url 'main' %}" {% if request.resolver_match.url_name == 'main' %}class="active"{% endif %}>Главная</a></li>
+            <li><a href="{% url 'catalog' %}" {% if request.resolver_match.url_name == 'catalog' %}class="active"{% endif %}>Каталог</a></li>
+            <li><a href="{% url 'about' %}" {% if request.resolver_match.url_name == 'about' %}class="active"{% endif %}>О нас</a></li>
+            <li><a href="{% url 'brands' %}" class="db-link {% if request.resolver_match.url_name == 'brands' %}active{% endif %}">Марки</a></li>
+            <li><a href="{% url 'cars' %}" class="db-link {% if request.resolver_match.url_name == 'cars' %}active{% endif %}">Авто</a></li>
+            <li><a href="{% url 'features' %}" class="db-link {% if request.resolver_match.url_name == 'features' %}active{% endif %}">Опции</a></li>
+            <li><a href="{% url 'customers' %}" class="db-link {% if request.resolver_match.url_name == 'customers' %}active{% endif %}">Клиенты</a></li>
+            <li><a href="{% url 'profiles' %}" class="db-link {% if request.resolver_match.url_name == 'profiles' %}active{% endif %}">Профили</a></li>
+            <li><a href="{% url 'orders' %}" class="db-link {% if request.resolver_match.url_name == 'orders' %}active{% endif %}">Заказы</a></li>
+        </ul>
+        <a href="{% url 'cars' %}" class="btn">База данных</a>
+    </nav>
+</header>

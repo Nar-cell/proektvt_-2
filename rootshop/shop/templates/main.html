@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}AutoPremium — Главная | Продажа автомобилей{% endblock %}
+
+{% block content %}
+<section class="hero">
+        <div class="hero-content">
+            <h1>Найди автомобиль своей мечты</h1>
+            <p>Проверенные автомобили с пробегом и новые модели. Честные цены, гарантия и полное сопровождение сделки.</p>
+            <div class="hero-btns">
+                <a href="{% url 'catalog' %}" class="btn">Перейти в каталог</a>
+                <a href="{% url 'about' %}" class="btn btn-outline">О компании</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Популярные предложения</h2>
+        <p class="section-sub">Лучшие автомобили этого месяца</p>
+        <div class="cars-grid">
+            <article class="car-card">
+                <div class="car-img">
+                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&q=80" alt="Mercedes-Benz E-Class">
+                    <span class="car-badge">Хит</span>
+                </div>
+                <div class="car-body">
+                    <div class="car-brand">Mercedes-Benz</div>
+                    <h3 class="car-name">E-Class 2021</h3>
+                    <div class="car-specs">
+                        <span>2.0 л · 197 л.с.</span>
+                        <span>45 000 км</span>
+                        <span>Автомат</span>
+                    </div>
+                    <div class="car-price">4 890 000 ₽</div>
+                </div>
+            </article>
+            <article class="car-card">
+                <div class="car-img">
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=600&q=80" alt="BMW 5 Series">
+                    <span class="car-badge">Новое</span>
+                </div>
+                <div class="car-body">
+                    <div class="car-brand">BMW</div>
+                    <h3 class="car-name">5 Series 530i</h3>
+                    <div class="car-specs">
+                        <span>2.0 л · 252 л.с.</span>
+                        <span>32 000 км</span>
+                        <span>Автомат</span>
+                    </div>
+                    <div class="car-price">5 250 000 ₽</div>
+                </div>
+            </article>
+            <article class="car-card">
+                <div class="car-img">
+                    <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600&q=80" alt="Audi A6">
+                </div>
+                <div class="car-body">
+                    <div class="car-brand">Audi</div>
+                    <h3 class="car-name">A6 45 TFSI</h3>
+                    <div class="car-specs">
+                        <span>2.0 л · 245 л.с.</span>
+                        <span>28 500 км</span>
+                        <span>Автомат</span>
+                    </div>
+                    <div class="car-price">4 670 000 ₽</div>
+                </div>
+            </article>
+        </div>
+        <div style="text-align:center; margin-top:2.5rem;">
+            <a href="{% url 'catalog' %}" class="btn">Весь каталог →</a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Почему выбирают нас</h2>
+        <p class="section-sub">Более 8 лет на рынке автомобильных продаж</p>
+        <div class="why-grid">
+            <div class="why-card">
+                <h3>Проверка по 150 пунктам</h3>
+                <p>Каждый автомобиль проходит полную техническую диагностику перед продажей.</p>
+            </div>
+            <div class="why-card">
+                <h3>Чистая история</h3>
+                <p>Только автомобили без ДТП, с прозрачной историей владения и обслуживания.</p>
+            </div>
+            <div class="why-card">
+                <h3>Гарантия 1 год</h3>
+                <p>Даём гарантию на двигатель и КПП. Помогаем с оформлением и страховкой.</p>
+            </div>
+            <div class="why-card">
+                <h3>Кредит и trade-in</h3>
+                <p>Одобрение кредита за 30 минут. Принимаем ваш авто в зачёт.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta">
+        <h2>Готовы выбрать автомобиль?</h2>
+        <p>Посмотрите полный каталог или свяжитесь с нами — поможем подобрать идеальный вариант.</p>
+        <a href="{% url 'catalog' %}" class="btn">Открыть каталог</a>
+    </div>
+{% endblock %}

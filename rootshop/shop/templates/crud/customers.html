@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Клиенты — AutoPremium{% endblock %}
+{% block content %}
+<div class="crud-page">
+    <h1>Клиенты</h1>
+    <p class="subtitle">Таблица Customer · связь 1:1 с профилем, 1:N с заказами</p>
+    {% include "includes/messages.html" %}
+    <div class="crud-grid">
+        <div class="form-card">
+            <h2>Добавить клиента</h2>
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% include "includes/form_errors.html" %}
+                {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}<ul class="form-errors">{% for e in field.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn" style="width:100%;margin-top:0.5rem">Сохранить</button>
+            </form>
+        </div>
+        <div class="list-card">
+            <h2>Список клиентов ({{ items|length }})</h2>
+            {% if items %}
+            <table class="data-table">
+                <thead><tr><th>ID</th><th>ФИО</th><th>Телефон</th><th>Email</th><th>Заказы</th></tr></thead>
+                <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.full_name }}</td>
+                    <td>{{ item.phone }}</td>
+                    <td>{{ item.email|default:"—" }}</td>
+                    <td>{{ item.orders.count }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p class="empty-list">Пока нет клиентов.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

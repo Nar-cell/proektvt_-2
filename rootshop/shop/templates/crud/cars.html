@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Автомобили — AutoPremium{% endblock %}
+{% block content %}
+<div class="crud-page">
+    <h1>Автомобили</h1>
+    <p class="subtitle">Таблица Car · FK → Brand (1:N), M2M → Feature</p>
+    {% include "includes/messages.html" %}
+    <div class="crud-grid">
+        <div class="form-card">
+            <h2>Добавить автомобиль</h2>
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% include "includes/form_errors.html" %}
+                {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {% if field.name == 'features' %}
+                        <div class="checkbox-list">{{ field }}</div>
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                    {% if field.errors %}<ul class="form-errors">{% for e in field.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn" style="width:100%;margin-top:0.5rem">Сохранить</button>
+            </form>
+        </div>
+        <div class="list-card">
+            <h2>Список автомобилей ({{ items|length }})</h2>
+            {% if items %}
+            <table class="data-table">
+                <thead><tr><th>ID</th><th>Марка / модель</th><th>Год</th><th>Цена</th><th>КПП</th><th>Опции</th><th>Наличие</th></tr></thead>
+                <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.brand }} {{ item.model_name }}</td>
+                    <td>{{ item.year }}</td>
+                    <td>{{ item.price }} ₽</td>
+                    <td>{{ item.get_transmission_display }}</td>
+                    <td>{% for f in item.features.all %}{{ f.name }}{% if not forloop.last %}, {% endif %}{% empty %}—{% endfor %}</td>
+                    <td>{% if item.is_available %}<span class="badge ok">Да</span>{% else %}<span class="badge off">Нет</span>{% endif %}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p class="empty-list">Сначала добавьте хотя бы одну марку, затем автомобиль.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
